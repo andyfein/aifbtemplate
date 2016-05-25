@@ -27,7 +27,7 @@
 %
 % **************************************************************************************************************
 \RequirePackage{fix-cm} % fix some latex issues see: http://texdoc.net/texmf-dist/doc/latex/base/fixltx2e.pdf
-\documentclass[ twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
+\documentclass[ oneside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
                 footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
                 BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
                 ngerman,american,%
@@ -41,21 +41,19 @@
 %********************************************************************
 % Bibliographies
 %*******************************************************
-\addbibresource{Bibliography.bib}
-\addbibresource[label=ownpubs]{AMiede_Publications.bib}
+\addbibresource{bibliography.bib}
 
 %********************************************************************
 % Hyphenation
 %*******************************************************
 %\hyphenation{put special hyphenation here}
 
+\usepackage{lipsum}
 % ********************************************************************
-% GO!GO!GO! MOVE IT!
-%*******************************************************
 \begin{document}
 \frenchspacing
 \raggedbottom
-\selectlanguage{american} % american ngerman
+\selectlanguage{ngerman} % american ngerman
 %\renewcommand*{\bibname}{new name}
 %\setbibpreamble{}
 \pagenumbering{roman}
@@ -63,16 +61,11 @@
 %********************************************************************
 % Frontmatter
 %*******************************************************
-\include{FrontBackmatter/DirtyTitlepage}
-\include{FrontBackmatter/Titlepage}
-\include{FrontBackmatter/Titleback}
-\cleardoublepage\include{FrontBackmatter/Dedication}
-%\cleardoublepage\include{FrontBackmatter/Foreword}
-\cleardoublepage\include{FrontBackmatter/Abstract}
-\cleardoublepage\include{FrontBackmatter/Publications}
-\cleardoublepage\include{FrontBackmatter/Acknowledgments}
+\include{frontmatter/titlepage}
+\cleardoublepage\include{frontmatter/abstract}
+%\cleardoublepage\include{frontmatter/acknowledgments}
 \pagestyle{scrheadings}
-\cleardoublepage\include{FrontBackmatter/Contents}
+\cleardoublepage\include{frontmatter/contents}
 %********************************************************************
 % Mainmatter
 %*******************************************************
@@ -80,34 +73,13 @@
 %\setcounter{page}{90}
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
-\part{Some Kind of Manual}
-\include{Chapters/Chapter01}
-\cleardoublepage
-\ctparttext{You can put some informational part preamble text here. 
-Illo principalmente su nos. Non message \emph{occidental} angloromanic
-da. Debitas effortio simplificate sia se, auxiliar summarios da que,
-se avantiate publicationes via. Pan in terra summarios, capital
-interlingua se que. Al via multo esser specimen, campo responder que
-da. Le usate medical addresses pro, europa origine sanctificate nos se.}
-\part{The Showcase}
-\include{Chapters/Chapter02}
-%\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff, ignore
-\include{Chapters/Chapter03}
-%\include{multiToC} % <--- just debug stuff, ignore for your documents
-% ********************************************************************
-% Backmatter
-%*******************************************************
-\appendix
-%\renewcommand{\thechapter}{\alph{chapter}}
-\cleardoublepage
-\part{Appendix}
-\include{Chapters/Chapter0A}
+\input{content}
+
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
-\cleardoublepage\include{FrontBackmatter/Bibliography}
-\cleardoublepage\include{FrontBackmatter/Declaration}
-\cleardoublepage\include{FrontBackmatter/Colophon}
+\cleardoublepage\include{backmatter/bibliography}
+\cleardoublepage\include{backmatter/declaration}
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************
