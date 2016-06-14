@@ -8,14 +8,20 @@
 \let\cleardoublepage\relax
 \let\cleardoublepage\relax
 
-%\chapter*{Abstract}
-%Short summary of the contents in English\dots a great guide by 
-%Kent Beck how to write good abstracts can be found here:  
-%\begin{center}
-%\url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}
-%\end{center}
 
-%\vfill
+% English abstract is only printed when thesis language is English
+\ifx\myLanguage\english
+
+\chapter*{Abstract}
+Short summary of the contents in English\dots a great guide by 
+Kent Beck how to write good abstracts can be found here:  
+\begin{center}
+\url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}
+\end{center}
+
+\vfill
+
+\fi
 
 \begin{otherlanguage}{ngerman}
 \pdfbookmark[1]{Zusammenfassung}{Zusammenfassung}

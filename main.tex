@@ -41,7 +41,7 @@
 %********************************************************************
 % Bibliographies
 %*******************************************************
-\addbibresource{bibliography.bib}
+%\addbibresource{bibliography.bib}
 
 %********************************************************************
 % Hyphenation
@@ -53,7 +53,13 @@
 \begin{document}
 \frenchspacing
 \raggedbottom
-\selectlanguage{ngerman} % american ngerman
+\def\english{en}
+\def\german{de}
+\ifx\myLanguage\german
+\selectlanguage{ngerman} 
+\else\ifx\myLanguage\english
+\selectlanguage{american} 
+\fi\fi
 %\renewcommand*{\bibname}{new name}
 %\setbibpreamble{}
 \pagenumbering{roman}
@@ -78,10 +84,22 @@
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
-\cleardoublepage\include{backmatter/bibliography}
+%\cleardoublepage\include{backmatter/bibliography}
+%********************************************************************
+% Bibliography
+%*******************************************************
+% work-around to have small caps also here in the headline
+\manualmark
+\markboth{\spacedlowsmallcaps{\bibname}}{\spacedlowsmallcaps{\bibname}} % work-around to have small caps also
+%\phantomsection 
+\refstepcounter{dummy}
+\addtocontents{toc}{\protect\vspace{\beforebibskip}} % to have the bib a bit from the rest in the toc
+\addcontentsline{toc}{chapter}{\tocEntry{\bibname}}
+\label{app:bibliography}
+\bibliographystyle{lnig}
+\bibliography{bibliography}
 \cleardoublepage\include{backmatter/declaration}
 % ********************************************************************
-% Game Over: Restore, Restart, or Quit?
 %*******************************************************
 \end{document}
 % ********************************************************************

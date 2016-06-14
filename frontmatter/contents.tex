@@ -60,9 +60,17 @@
     %*******************************************************
     %\phantomsection 
     \refstepcounter{dummy}
+    
+    \ifx\myLanguage\german
     \pdfbookmark[1]{Abkürzungen}{abkürzen}
     \markboth{\spacedlowsmallcaps{Abkürzungen}}{\spacedlowsmallcaps{Abkürzungen}}
     \chapter*{Abkürzungen}
+    \else\ifx\myLanguage\english
+    \pdfbookmark[1]{Acronyms}{acronyms}
+    \markboth{\spacedlowsmallcaps{Acronyms}}{\spacedlowsmallcaps{Acronyms}}
+    \chapter*{Acronyms}
+    \fi\fi
+    
     \begin{acronym}[UMLX]
         \acro{DRY}{Don't Repeat Yourself}
         \acro{API}{Application Programming Interface}

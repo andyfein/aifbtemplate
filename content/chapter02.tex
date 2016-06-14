@@ -16,13 +16,14 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 \section{Zitate, Verweise, Abkürzungen}
 
-Einbindung von Zitaten: lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam ``et justo duo dolores et ea rebum'' \citep{cormen:2001}. \citeauthor{taleb:2012} \citep{taleb:2012} stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Einbindung von Zitaten: lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam ``et justo duo dolores et ea rebum'' \cite{AB00}. \cite{AB00} \cite{ABC01} stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet \cite{Az09} \cite{Ez10} \cite{Gl06} \cite{GI14} \cite{Wa14} \cite{XX14} \cite{Wa14b}.
 
 Verweise auf Kapitel, Abschnitte, Tabellen, \dots: \autoref{tab:example}, \autoref{ch:beispiele}, \autoref{sec:textformatierungen}.
 
-Abkürzungen: \ac{UML} -- \acs{UML} -- \acf{UML} -- \acp{UML}. 
+Abkürzungen werden in der Datei \texttt{frontmatter/contents.tex} definiert: \ac{UML} -- \acs{UML} -- \acf{UML} -- \acp{UML}. 
 
-\subsection{Unterabschnitte und Paragraphen}
+\section{Unterabschnitte und Paragraphen}
+\subsection{Unterabschnitt}
 Lorem ipsum at nusquam appellantur his, ut eos erant homero concludaturque. Albucius appellantur deterruisset id eam, vivendum partiendo dissentiet ei ius. Vis melius facilisis ea, sea id convenire referrentur, takimata adolescens ex duo. Ei harum argumentum per. Eam vidit exerci appetere ad, ut vel zzril intellegam interpretaris.
 
 \paragraph{Beispielparagraph} 
@@ -64,7 +65,7 @@ Deler utilitate methodicamente con se. Technic scriber uso in, via appellate ins
 
 \lipsum[1]
 
-\begin{lstlisting}[float=b,language=Pascal,frame=tb,caption={A floating example (\texttt{listings} manual)},label=lst:useless,captionpos=b]
+\begin{lstlisting}[float=b,language=Pascal,frame=tb,caption={Listing Beispiel.},label=lst:useless,captionpos=b]
 for i:=maxint downto 0 do
 begin
 { do nothing }
@@ -80,10 +81,10 @@ end;
     fastidii ea ius & germano &  demonstratea \\
 	suscipit instructior & titulo & personas \\
 	\midrule
-	quaestio philosophia & facto & demonstrated \citeauthor{knuth:1976} \\
+	quaestio philosophia & facto & demonstrated \cite{AB00} \\
 	\bottomrule
 	\end{tabularx}
-	\caption[Autem timeam]{Autem timeam deleniti usu id.}  \label{tab:example}
+	\caption[Kurzer Titel Tabelle.]{Langer Titel für Tabelle.}  \label{tab:example}
 \end{table}
 
 \lipsum[1]
@@ -99,11 +100,10 @@ end;
         {\includegraphics[width=.45\linewidth]{images/example_3}} \quad
         \subfloat[Titulo debitas.]
         {\includegraphics[width=.45\linewidth]{images/example_4}}
-        \caption[Tu duo titulo debitas latente]{Tu duo titulo debitas
-        latente.}\label{fig:example}
+        \caption[Bilder.]{Viele Bilder.}\label{fig:example}
 \end{figure}
 
-\subsection{Verschiedene Mathematische Beispiele}
+\section{Verschiedene Mathematische Beispiele}
 
 \begin{eqnarray*} \xi  = \frac{2\pi z^2 e^4 N_{\textrm{Av}} Z \rho
 \delta x}{m_{\textrm{e}} \beta^2 c^2 A} =  153.4 \frac{z^2}{\beta^2}
