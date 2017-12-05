@@ -30,10 +30,10 @@
         \begin{tabular}{lll}
         	  eingereicht am & : & \myTime \\
         	  Studiengang & : & \myCourse \\
-              Referent  & : & \myProf \\
-			  Betreuer        & : & \mySupervisor
-              %Examiner  & : & \myProf \\
-              %Supervisor      & : & \mySupervisor
+		  \ifnum\isSeminar=0
+              	  Referent  & : & \myProf \\
+              	  \fi
+		  Betreuer        & : & \mySupervisor
         \end{tabular}
 
         \vfill
